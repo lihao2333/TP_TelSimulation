@@ -4,6 +4,7 @@ L = length(t)
 Fs = 1/(t(2)-t(1))
 sf = fft(st);
 sf = abs(sf/L);
-sf = sf(1:L/2+1);
+sf = sf(1:floor(L/2)+1);
 sf(2:end-1) = 2*sf(2:end-1);
 f = Fs*(0:(L/2))/L;
+end
