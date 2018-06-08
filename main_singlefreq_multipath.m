@@ -1,6 +1,7 @@
 %%单频信号经过多径时变信道
 %  时延大小随时间变化，
 %  这里的时变 是人为设定的； 实际中时变 大多因为移动性导致
+
 clc
 clear all;
 import freq_trans.T2F
@@ -26,11 +27,10 @@ rt=sum(s)/sqrt(L);  % 将信号经过多径的结果相加
 %-----------画图----------
 figure(1)
 subplot(221)
-plot(t,st); xlabel('t');ylabel('s(t)');title('$$s(t)=cos(2\pi*10t)$$','interpreter','latex');
+plot(t,st); xlabel('t');ylabel('s(t)');title('$s(t)=cos(2\pi*10t)$','interpreter','latex');
 axis([0 10 -1.5 1.5]);
 subplot(222)
-plot(t,rt);xlabel('t');ylabel('r(t)');title('$$r(t)=multipath(s(t))$$','interpreter','latex');
-
+plot(t,rt);xlabel('t');ylabel('r(t)');title('$r(t)=\sum _{i=0}^{L} cos(2\pi*(10+\Delta f _i)t+\phi _i)$','interpreter','latex');
 subplot(223)
 plot(ff,sf);xlabel('f');ylabel('s(f)');
 title('$s(f)$','interpreter','latex');
