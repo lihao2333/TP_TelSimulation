@@ -25,6 +25,8 @@ Y_data_old = way_matrix_old(X_data, H_old , W, NumCP, MaxDelay);
 
 Y_bits = ofdm.demodulation(Y_data, Mod_level);
 Y_bits_old = ofdm.demodulation(Y_data_old, Mod_level);
-sum(sum(Y_bits~=Y_bits_old))
-sum(sum(Y_bits~=X_bits))
+diff_Y_Y_old=sum(sum(Y_bits~=Y_bits_old));
+dif_Y_X=sum(sum(Y_bits~=X_bits));
+sprintf('两种方法得到的Y_bits差异值为%d', diff_Y_Y_old)
+sprintf('在SNR_DB=%d的情况下, 误比特个数为%d',SNR_db, dif_Y_X)
 
