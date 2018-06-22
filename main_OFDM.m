@@ -3,7 +3,9 @@ import ofdm.way_matrix
 import ofdm.way_matrix_old
 import ofdm.modulation
 import ofdm.gen_H
+import ofdm.gen_H_old
 import ofdm.gen_W
+import ofdm.gen_X
 rng(100)
 Delays = [0 1 2];MaxDelay = max(Delays);
 Weights = [3 4 5];
